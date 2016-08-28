@@ -21,7 +21,7 @@ If you're not familiar with CAS, please refer to these resources:
 
 ## Integration steps
 
-In order to deploy SecurityRAT as a CAS client, just open the configuration file at `src/main/resources/config/application-[dev|prod].yml` (depending on whether you want to configure the development or production profile) and edit the following lines:
+In order to deploy SecurityRAT as a CAS client, just open the configuration file at `src/main/resources/config/application.yml` (depending on whether you want to configure the development or production profile) and edit the following lines:
 
 ```
 authentication:
