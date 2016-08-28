@@ -25,7 +25,7 @@ Before installing SecurityRAT, you have to have the following components install
 
 - checkout this project
 - log into your mysql server and create an empty database for this application
-- edit the database in the file `src/main/resources/config/application-[dev|prod].yml` according to the examples
+- edit the database in the file `src/main/resources/config/application-prod.yml` according to the examples
 
 ```
 databaseName: $YourDatabase
@@ -35,7 +35,7 @@ password: $DBUserPassword
 
 - enable TLS for spring boot if you don't use a separate web server:
    - e.g. generate a self-signed certificate in the root directory of SecurityRAT: `keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650`
-   - add the following lines into `application-dev.yml`:
+   - add the following lines into `application-prod.yml`:
    
 ```
 server:
