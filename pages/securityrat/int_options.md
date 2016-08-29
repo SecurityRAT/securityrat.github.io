@@ -1,7 +1,7 @@
 ---
 title: Integration Options
 #keywords: sample
-summary: "You can get more of SecurityRAT if use its integration possibilities."
+summary: "You can get more of SecurityRAT if you use its integration possibilities."
 sidebar: home_sidebar
 permalink: int_options.html
 #simple_map: true
