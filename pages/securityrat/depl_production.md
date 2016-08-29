@@ -23,7 +23,7 @@ Before installing SecurityRAT, you have to have the following components install
 
 ## Before starting the application :
 
-- checkout this project
+- checkout the SecurityRAT project
 - log into your mysql server and create an empty database for this application
 - edit the database in the file `src/main/resources/config/application-prod.yml` according to the examples
 
@@ -71,7 +71,7 @@ mail:
 - in your target directory on the server, create a directory called `config` and copy the files `src/main/resources/config/application-prod.yml` and `src/main/resources/config/application.yml` there
 - switch to the target directory and fire `java -jar securityRAT-${version}.war --spring.profiles.active=prod`
 - log in to your mysql server and in the `JHI_USER` table rename the 'admin' user login to your CAS username **OR** log in with the credentials `admin` for the username and password (in order to get full rights for your user).
-- it is recommended to use a web server (e.g. [Apache](https://httpd.apache.org/) as a proxy, with a proper TLS configuration set etc.
+- it is recommended to use a web server (e.g. [Apache](https://httpd.apache.org/) as a proxy, with a proper TLS configuration set etc).
 - go to the URL of your server. You should be verified by your previously setup CAS server and can start using the application.
 - The constants (under Administration -> constants) must be edited accordingly.
 - **it is important to change the `admin` password in `prod mode`.**
