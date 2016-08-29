@@ -27,7 +27,7 @@ JIRA integration is used in three cases:
 
 ## Steps for integration
 
-The connection to JIRA is realized solely using by the JavaScript side of SecurityRAT. This means that Cross-Origin Resource Sharing (CORS) is used. In order to enable CORS on JIRA side, you need JIRA to include respective headers in HTTP responses: 
+The connection to JIRA is realized solely using the JavaScript side of SecurityRAT. This means that Cross-Origin Resource Sharing (CORS) is used. In order to enable CORS on JIRA side, you need JIRA to include respective headers in HTTP responses: 
 
 ```
 Access-Control-Allow-Origin: https://$SecurityRAT_URL
