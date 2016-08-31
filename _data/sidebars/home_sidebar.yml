@@ -10,7 +10,7 @@ entries:
     - title: What is SecurityRAT
       url: /index.html
       output: web
-    - title: Requirements
+    - title: Requirement Schema
       url: /intro_requirements.html
       output: web
   - title: Deployment Options
