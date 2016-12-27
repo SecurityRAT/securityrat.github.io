@@ -33,6 +33,8 @@ cas:
   callbackUrl: https://localhost:9000/callback #Change to the correct URL (https) of SecurityRAT
 ``` 
 
+Log in to your mysql server and in the `JHI_USER` table rename the 'admin' user login to your CAS username in order to get full rights for your admin user.
+
 Restart the application and you're done!
 
 
