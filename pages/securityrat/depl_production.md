@@ -21,9 +21,10 @@ Before installing SecurityRAT, you have to have the following components install
 * (recommended) Apache Web Server serving as a reverse proxy and terminating TLS
 
 
-## Before starting the application :
+## Installation & Configuration:
 
-- checkout the SecurityRAT project
+- download the latest [release](https://github.com/SecurityRAT/SecurityRAT/releases) of SecurityRAT (either as a .zip or a .tar.gz archive)
+- unpack the downloaded archive to a desired location
 - log into your mysql server and create an empty database for this application
 - edit the database in the file `src/main/resources/config/application-prod.yml` according to the examples
 
@@ -63,17 +64,14 @@ mail:
   from: securityRAT@localhost # from email address
 ```
 
-## How to run in prod mode
-- fire `mvn -Pprod -DskipTests package`. This will build the following files:
-  - `target/securityRAT-${version}.war`
-  - `target/securityRAT-${version}.war.original`
-- copy the file `target/securityRAT-${version}.war` file to your production server
-- in your target directory on the server, create a directory called `config` and copy the files `src/main/resources/config/application-prod.yml` and `src/main/resources/config/application.yml` there
-- switch to the target directory and fire `java -jar securityRAT-${version}.war --spring.profiles.active=prod`
-- log in to your mysql server and in the `JHI_USER` table rename the 'admin' user login to your CAS username **OR** log in with the credentials `admin` for the username and password (in order to get full rights for your user).
-- it is recommended to use a web server (e.g. [Apache](https://httpd.apache.org/) as a proxy, with a proper TLS configuration set etc).
-- go to the URL of your server. You should be verified by your previously setup CAS server OR FORM login and can start using the application.
-- The constants (under Administration -> constants) must be edited accordingly.
+## Running the Application
+- switch to your SecurityRAT directory and fire `java -jar securityRAT-${version}.war --spring.profiles.active=prod`
+- go to the URL of your server and log in using the default credentials admin/admin
+- Edit the constants in the application (under Administration -> constants) to the desired values.
+
+## Notes
 - **it is important to change the `admin` password in `prod mode`.**
+- it is recommended to use a web server (e.g. [Apache](https://httpd.apache.org/) as a proxy, with a proper TLS configuration set etc).
+
 
 {% include links.html %}
