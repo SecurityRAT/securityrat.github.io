@@ -41,5 +41,7 @@ Usually you realize this by configuring a HTTP Server serving as a reverse proxy
 
 {% include warning.html content='Depending on your JIRA version, you might get an error message related to a CSRF token. The issue is documented [here](https://confluence.atlassian.com/jirakb/rest-api-calls-with-a-browser-user-agent-header-may-fail-csrf-checks-802591455.html). The recommended solution is to remove the User Agent header on your proxy server.' %}
 
+{% include warning.html content='JIRA also seems to have problems with OPTIONS requests with certain versions. For reference and ideas how solve it, have a look at [this JIRA issue](https://jira.atlassian.com/browse/JRASERVER-59101?focusedCommentId=1007679&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1007679). Note that you should set these Headers according to the least privilege principles.' %}
+
 
 {% include links.html %}
