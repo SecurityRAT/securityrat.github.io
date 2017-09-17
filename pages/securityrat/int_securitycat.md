@@ -17,6 +17,8 @@ SecurityCAT (Compliance Automation Tool) is an extension for SecurityRAT meant f
 Given that the implementation depends on the particular used requirements, everybody should implement his own respective version of SecurityCAT.
 SecurityRAT just defines an API it can speak to and which can be used for starting a scan, fetching the results and stopping a scan. 
 
+SecurityCAT is meant to be implemented via [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS), this means that SecurityRAT doesn't talk to SecurityCAT directly, but the integration is done via browser. This implicates that CORS Headers need to be delivered by SecurityCAT, these are described below. 
+
 ## API specification
 
 ### Create a test 
@@ -65,6 +67,18 @@ DELETE /scanapi/tests/{test_id}
 ```
 
 Response 200 is expected. 
+
+## CORS Headers
+The following CORS Headers need to be delivered by SecurityCAT if you want the CORS integration with SecurityRAT to work:
+
+```
+Access-Control-Allow-Origin: {SecurityRAT_URL}
+Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
+Access-Control-Allow-Headers: content-type, x-securitycat-csrf
+Access-Control-Expose-Headers: Location
+Vary: Origin      
+```
+
 
 
 {% include links.html %}
