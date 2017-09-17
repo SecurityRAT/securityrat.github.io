@@ -26,7 +26,22 @@ SecurityCAT is meant to be implemented via [CORS](https://developer.mozilla.org/
 Request:
 ```
 POST /scanapi/tests
+
+{
+    requirements : ["req1_shortName", "req2_shortName", ....],
+    testProperties : {
+        sonarKey : sonarqube_key,
+        scmUrl : scm_url,
+        appUrl : appUrl
+    }
+}
 ```
+
+* ```requirements``` contains the list of requirement shortnames, which are supposed to be tested
+* ```testProperties```:
+  * ```sonarKey``` indicates sonarqube key of the artifact in sonarqube
+  * ```scmUrl``` indicates the URL of the source code repository where the code can be checked out
+  * ```appUrl``` indicates the URL of the application which can be used for black box tests
 
 Reponse 202/Accepted containing the URL for fetching the result in the ```Location``` header is expected. 
 
