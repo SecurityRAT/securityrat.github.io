@@ -37,3 +37,6 @@ entries:
       - title: JIRA
         url: int_jira.html
         output: web
+      - title: SecurityCAT
+        url: int_securitycat.html
+        output: web
