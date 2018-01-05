@@ -64,7 +64,20 @@ Response contains an array of requirements being tested together with the curren
         tool: tool_name
     }]
 }]
+
+Everything not 200 (e.g. 401 for authenticated scans and wrong username or password)
+ 
+[{
+    requirement: null
+    testResults: [{
+        status: ERROR
+        confidenceLevel: null
+        message: String
+        tool: tool_name
+    }]
+}]
 ```
+
 
 * ```status``` describes the state of the test:
   * ```ERROR```: Test could not be completed
