@@ -12,20 +12,6 @@ folder: product2
 
 
 ## Quick start
-Download the docker image:
-
-```
-docker pull securityrat/all_in_one
-```
-
-In order to start the image and load SecurityRAT in the browser, follow the instructions at the [SecurityRAT Page on DockerHub](https://hub.docker.com/r/securityrat/all_in_one/)
-
-## Contents of the Docker Image
-
-The docker image contains the following parts:
-
-* SecurityRAT tool
-* Apereo CAS for authentication
-* MySQL Database containing the default requirement set
+A Github repository with a docker compose file to easily start-up the SecurityRAT tool in a docker container is available [here](https://github.com/SecurityRAT/SecurityRAT-dockercompose).
 
 {% include links.html %}
