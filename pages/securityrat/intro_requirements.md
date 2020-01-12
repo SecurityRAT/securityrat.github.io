@@ -36,7 +36,7 @@ While working with you first requirement set, you will probably find out that on
 
 Status Columns are of two types:
 
-* eval: In this case, this Status Column is linked to Status Column Values. An example could be the Status Column "Implemented" and respective values "Yes" and "No".
+* enum: In this case, this Status Column is linked to Status Column Values. An example could be the Status Column "Implemented" and respective values "Yes" and "No".
 * text: Free text, e.g comment explaining the implementation of the requirement
 
 ## Implementation Type
