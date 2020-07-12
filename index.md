@@ -22,8 +22,13 @@ For getting more information about the tool in 40 minutes, you can watch this vi
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/6N__PgMSfYU" frameborder="0" allowfullscreen></iframe></center>
 
+
 **Try it out!**
-You can play around with a public demo instance of SecurityRAT under https://securityrat.org, including changing requirements. All settings are restored every 24 hours. 
+
+You can play around with a public demo instance of SecurityRAT under [https://securityrat.org](https://securityrat.org), including changing requirements. All settings are restored every 24 hours. 
+
+
 
 Username: demo
+
 Password: SecurityRATdemo10!
