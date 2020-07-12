@@ -6,11 +6,11 @@ sidebar: home_sidebar
 permalink: index.html
 #summary: ou get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.
 ---
-**SecurityRAT** ("Security Requirement Automation Tool") is a tool supposed to help you with security challenges in your development projects.
+**SecurityRAT** ("Security Requirement Automation Tool") is a tool helping you manage security requirements in your agile development projects.
 
 The basic idea is very simple: you specify the properties of an application (usually, we use the name "artifact") that you're developing. Based on these properties, the tool gives you a list of security requirements you should fulfill. 
 
-For every single requirement, you can decide whether it should/will be implemented and add your own comment (or e.g. reasoning why you're not going to implement it if you've decided against it). Once you're done, you can persist the particular requirement set in a JIRA ticket for documentation purposes (the requirement set is attached as a YAML file). 
+For each requirement, you can decide whether it should/will be implemented and add your own comment (or e.g. reasoning why you're not going to implement it if you've decided against it). Once you're done, you can persist the particular requirement set in a JIRA ticket for documentation purposes (the requirement set is attached as a YAML file). 
 
 Afterwards, you can create JIRA tickets for particular requirements in a batch mode and track them with SecurityRAT. The workflow is shown on the image below:
 
