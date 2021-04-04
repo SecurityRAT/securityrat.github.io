@@ -24,6 +24,7 @@ SecurityCAT is meant to be implemented via [CORS](https://developer.mozilla.org/
 ### Create a test 
 
 Request:
+
 ```
 POST /scanapi/tests
 
@@ -46,13 +47,16 @@ POST /scanapi/tests
 Reponse 202/Accepted containing the URL for fetching the result in the ```Location``` header is expected. 
 
 ### Fetch test results
+
 Request:
+
 ```
 GET /scanapi/tests/{test_id}
 ```
 
-Response contains an array of requirements being tested together with the current status of the test. 
-```
+Response contains an array of requirements being tested together with the current status of the test.
+
+```curl
 200/OK
  
 [{
@@ -78,7 +82,6 @@ Everything not 200 (e.g. 401 for authenticated scans and wrong username or passw
 }]
 ```
 
-
 * ```status``` describes the state of the test:
   * ```ERROR```: Test could not be completed
   * ```IN_PROGRESS```: Test is being executed
@@ -89,24 +92,26 @@ Everything not 200 (e.g. 401 for authenticated scans and wrong username or passw
 * ```tool``` indicates the name of tool / microservice which actually performed the test
 
 ### Stop the test
+
 Request:
+
 ```
 DELETE /scanapi/tests/{test_id}
 ```
 
-Response 200 is expected. 
+Response 200 is expected.
 
 ## CORS Headers
+
 The following CORS Headers need to be delivered by SecurityCAT if you want the CORS integration with SecurityRAT to work:
 
-```
+```apacheconf
 Access-Control-Allow-Origin: {SecurityRAT_URL}
 Access-Control-Allow-Methods: GET,POST,OPTIONS,DELETE
 Access-Control-Allow-Headers: content-type, x-securitycat-csrf
 Access-Control-Expose-Headers: Location
 Vary: Origin      
 ```
-
 
 
 {% include links.html %}

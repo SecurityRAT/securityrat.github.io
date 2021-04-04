@@ -15,63 +15,63 @@ folder: product2
 
 Before installing SecurityRAT, you have to have the following components installed:
 
-* JAVA 8
-* Maven
-* MySQL
+* JAVA 11
+* Mariadb
 * (recommended) Apache Web Server serving as a reverse proxy and terminating TLS
 
+## Installation & Configuration
 
-## Installation & Configuration:
+* Download the latest [release](https://github.com/SecurityRAT/SecurityRAT/releases) of SecurityRAT (securityrat.tar.gz archive).
+* Unpack the downloaded archive to a desired location.
+* Log into your mariadb server and create an empty database for this application.
+* Edit the database in the file `config/application-prod.yml` according to the examples.
 
-- download the latest [release](https://github.com/SecurityRAT/SecurityRAT/releases) of SecurityRAT (either as a .zip or a .tar.gz archive)
-- unpack the downloaded archive to a desired location
-- log into your mysql server and create an empty database for this application
-- edit the database in the file `src/main/resources/config/application-prod.yml` according to the examples
+  ```yaml
+    databaseName: $YourDatabase
+    username: $DBUserName
+    password: $DBUserPassword
+  ```
 
-```
-databaseName: $YourDatabase
-username: $DBUserName
-password: $DBUserPassword
-```
+* Enable TLS for spring boot if you don't use a separate web server:
+  * e.g. generate a self-signed certificate in the root directory of SecurityRAT: `keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650`
+  * add the following lines into `application-prod.yml`:
 
-- enable TLS for spring boot if you don't use a separate web server:
-   - e.g. generate a self-signed certificate in the root directory of SecurityRAT: `keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650`
-   - add the following lines into `application-prod.yml`:
-   
-```
-server:
-  ssl:
-    key-store: keystore.p12
-    key-store-password: $MyPassword
-    keyStoreType: PKCS12
-    keyAlias: tomcat
-```
+  ```yaml
+  server:
+    ssl:
+      key-store: keystore.p12
+      key-store-password: $MyPassword
+      keyStoreType: PKCS12
+      keyAlias: tomcat
+  ```
 
-- edit the authentication type and the Mail server configurarion in the file `src/main/resources/config/application.yml`.
+* Edit the authentication type and the Mail server configurarion in the file `config/application.yml`.
 
-```
-authentication:
-  type: FORM
-	
-mail:
-  host: localhost # mail server
-  port: 25
-  username:	#might be needed depending on your mail server
-  password:	#might be needed depending on your mail server
-  protocol: smtp
-  tls: false
-  auth: false
-  from: securityRAT@localhost # from email address
-```
+  ```yaml
+  authentication:
+    type: FORM
+
+  mail:
+    host: localhost # mail server
+    port: 25
+    username:	#might be needed depending on your mail server
+    password:	#might be needed depending on your mail server
+    protocol: smtp
+    tls: false
+    auth: false
+    from: securityRAT@localhost # from email address
+  ```
 
 ## Running the Application
-- switch to your SecurityRAT directory and fire `java -jar securityRAT-${version}.war --spring.profiles.active=prod`
-- go to the URL of your server and log in using the default credentials admin/admin
-- Edit the constants in the application (under Administration -> constants) to the desired values.
+
+* Switch to your SecurityRAT directory and run `java -jar securityRAT-${version}.jar --spring.profiles.active=prod`.
+* Go to the URL of your server and log in using the default credentials **admin/admin**.
+* Edit the constants in the application (under Administration -> constants) to the desired values.
 
 ## Notes
-- **it is important to change the `admin` password in `prod mode`.**
-- it is recommended to use a web server (e.g. [Apache](https://httpd.apache.org/) as a proxy, with a proper TLS configuration set etc).
+
+* **It is important to change the `admin` password in `prod mode`**.
+* We recommended using a web server (e.g. [Apache](https://httpd.apache.org/) as a proxy, with a proper TLS configuration set etc).
 
 
 {% include links.html %}

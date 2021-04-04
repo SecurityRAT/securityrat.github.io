@@ -23,7 +23,7 @@ If you're not familiar with CAS, please refer to these resources:
 
 In order to deploy SecurityRAT as a CAS client, just open the configuration file at `src/main/resources/config/application.yml` (depending on whether you want to configure the development or production profile) and edit the following lines:
 
-```
+```yaml
 authentication:
   type: CAS # the default setting
 
@@ -31,9 +31,9 @@ cas:
   casLoginUrl: http(s)://localhost:8443/cas #Change to the URL your CAS server listens on
   casLogoutUrl: https://localhost:8443/cas/logout # Change to your CAS server logout URL
   callbackUrl: https://localhost:9000/callback #Change to the correct URL (https) of SecurityRAT
-``` 
+```
 
-Log in to your mysql server and in the `JHI_USER` table rename the 'admin' user login to your CAS username in order to get full rights for your admin user.
+Log in to your mariadb server and in the `JHI_USER` table rename the '**admin**' user login to your CAS username in order to get full rights for your admin user.
 
 Restart the application and you're done!
 

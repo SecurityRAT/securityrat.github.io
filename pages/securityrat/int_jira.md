@@ -13,7 +13,7 @@ folder: product2
 
 ## JIRA
 
-If you're not familiar with JIRA, please refer to the [project homepage](https://www.atlassian.com/software/jira). 
+If you're not familiar with JIRA, please refer to the [project's homepage](https://www.atlassian.com/software/jira).
 
 
 ## Integration use cases
@@ -24,18 +24,17 @@ JIRA integration is used in three cases:
 * the particular requirements can be opened as separate JIRA tickets
 * SecurityRAT users can give feedback to particular requirements. This leads to opening a JIRA ticket in a configured queue.  
 
-
 ## Steps for integration
 
-The connection to JIRA is realized solely using the JavaScript side of SecurityRAT. This means that Cross-Origin Resource Sharing (CORS) is used. In order to enable CORS on JIRA side, you need JIRA to include respective headers in HTTP responses: 
+The connection to JIRA is realized solely using the JavaScript side of SecurityRAT. This means that Cross-Origin Resource Sharing (CORS) is used. In order to enable CORS on JIRA side, you need JIRA to include respective headers in HTTP responses:
 
-```
+```apache
 Access-Control-Allow-Origin: https://$SecurityRAT_URL
 Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST
 Access-Control-Allow-Headers: Content-Type, X-Atlassian-Token
 Access-Control-Allow-Credentials: true
 
-``` 
+```
 
 Usually you realize this by configuring a HTTP Server serving as a reverse proxy for your JIRA instance. 
 
