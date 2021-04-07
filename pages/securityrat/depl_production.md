@@ -64,7 +64,7 @@ Before installing SecurityRAT, you have to have the following components install
 
 ## Running the Application
 
-* Switch to your SecurityRAT directory and run `java -jar securityRAT-${version}.jar --spring.profiles.active=prod`.
+* Switch to your SecurityRAT directory and run `java -jar securityrat.jar --spring.profiles.active=prod`.
 * Go to the URL of your server and log in using the default credentials **admin/admin**.
 * Edit the constants in the application (under Administration -> constants) to the desired values.
 
