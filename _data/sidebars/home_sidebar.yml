@@ -34,6 +34,9 @@ entries:
       - title: CAS
         url: int_cas.html
         output: web
+      - title: LDAP
+        url: int_ldap.html
+        output: web
       - title: JIRA
         url: int_jira.html
         output: web
