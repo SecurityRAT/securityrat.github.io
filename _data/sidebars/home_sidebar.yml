@@ -37,6 +37,9 @@ entries:
       - title: LDAP
         url: int_ldap.html
         output: web
+      - title: OIDC
+        url: int_oidc.html
+        output: web
       - title: JIRA
         url: int_jira.html
         output: web
